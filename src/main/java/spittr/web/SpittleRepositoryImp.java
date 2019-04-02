@@ -31,6 +31,9 @@ public class SpittleRepositoryImp implements SpittleRepository{
 	@Override
 	public Spittle findOne(long i) {
 		// TODO Auto-generated method stub
+		if(i==999) {
+			return null;
+		}
 		return new Spittle("Hello Spittr",new Date());
 	}
 

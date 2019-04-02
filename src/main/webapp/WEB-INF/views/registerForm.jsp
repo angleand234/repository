@@ -26,7 +26,7 @@
 </head>
 <body>
 	<h1>Register</h1>
-	<sf:form method="POST" commandName="spitter">
+	<sf:form method="POST" commandName="spitter" enctype="multipart/form-data">
 		<sf:errors path="*" element="div" cssClass="errors"></sf:errors>
 		<sf:label path="firstName" cssErrorClass="error">First Name</sf:label>:
 			<sf:input path="firstName" cssErrorClass="error"/><br/>
@@ -36,6 +36,8 @@
 			<sf:input path="username" cssErrorClass="error"/><br/>
 		<sf:label path="password" cssErrorClass="error">Password</sf:label>:
 			<sf:input path="password" cssErrorClass="error"/><br/>
+		<sf:label path="profilePicture" cssErrorClass="error">Profile Picture</sf:label>:
+			<sf:input path="profilePicture" cssErrorClass="error" type="file" /><br/>
 		<input type="submit" value="Register" />
 	</sf:form>
 	
