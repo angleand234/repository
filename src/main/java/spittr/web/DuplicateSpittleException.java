@@ -1,6 +1,6 @@
 package spittr.web;
 
-public class DuplicateSpittleException extends Exception {
+public class DuplicateSpittleException extends RuntimeException {
 
 	/**
 	 * 

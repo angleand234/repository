@@ -37,4 +37,10 @@ public class SpittleRepositoryImp implements SpittleRepository{
 		return new Spittle("Hello Spittr",new Date());
 	}
 
+	@Override
+	public void save() {
+		// TODO Auto-generated method stub
+		throw new DuplicateSpittleException();
+	}
+
 }

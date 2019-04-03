@@ -8,6 +8,7 @@
 <body>
 	<h1>Your Profile</h1>
 	<c:out value="${spitter.username}"></c:out><br/>
+	<c:out value="${spitter.password}"></c:out><br/>
 	<c:out value="${spitter.firstName}"></c:out>
 		<c:out value="${spitter.lastName}"></c:out>
 </body>

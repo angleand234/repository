@@ -1,12 +1,10 @@
 package spittr.web;
 
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -44,14 +42,11 @@ public class SpittleController {
 		return "spittle";
 	}
 	@RequestMapping(method=RequestMethod.POST)
-	public String saveSpittle(Spittle spittle,Model model) {
+	public String saveSpittle() {
 		/*spittleRepository.save(new Spittle(null,"test",new Date(),
 				form.getLatitude(),form.getLongitude()));*/
-		spittleRepository.save(spittle);
+		spittleRepository.save();
 		return "redirect:/spittles";
 	}
-	@ExceptionHandler(DuplicateSpittleException.class)
-	public String handleDuplicateSpittle() {
-		return "error/duplicate";
-	}
+	
 }
