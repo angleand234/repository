@@ -13,5 +13,8 @@
     <div>
     	<span class="spittleTime"><c:out value="${spittle.time}"></c:out></span>
     </div>
+	<div>
+		<a href="<c:url value="/home"></c:url>">Back</a>
+	</div>
 </body>
 </html>

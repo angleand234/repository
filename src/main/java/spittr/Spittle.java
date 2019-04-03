@@ -3,15 +3,44 @@ package spittr;
 
 import java.util.Date;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 public class Spittle {
-	private final Long id;
-	private final String message;
-	private final Date time;
+	private Long id;
+	@NotNull
+	@Size(min=5,max=25,message="{password.size}")
+	private String message;
+	private Date time;
 	private Double latitude;
 	private Double longitude;
+	
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public void setTime(Date time) {
+		this.time = time;
+	}
+
+	public void setLatitude(Double latitude) {
+		this.latitude = latitude;
+	}
+
+	public void setLongitude(Double longitude) {
+		this.longitude = longitude;
+	}
+
+	public Spittle() {
+		
+	}
 	
 	public Spittle(String message,Date time) {
 		this(message,time,null,null);

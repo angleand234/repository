@@ -7,6 +7,7 @@
 </head>
 <body>
 	<h1>Your Profile</h1>
+	<a href="<c:url value="/home"></c:url>">Back</a>
 	<c:out value="${spitter.username}"></c:out><br/>
 	<c:out value="${spitter.password}"></c:out><br/>
 	<c:out value="${spitter.firstName}"></c:out>

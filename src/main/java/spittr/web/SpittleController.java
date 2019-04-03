@@ -2,9 +2,12 @@ package spittr.web;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -42,11 +45,16 @@ public class SpittleController {
 		return "spittle";
 	}
 	@RequestMapping(method=RequestMethod.POST)
-	public String saveSpittle() {
-		/*spittleRepository.save(new Spittle(null,"test",new Date(),
-				form.getLatitude(),form.getLongitude()));*/
-		spittleRepository.save();
+	public String saveSpittle(@Valid Spittle spittle,Errors errors) {
+		if(errors.hasErrors()) {
+			return "newSpittle";
+		}
+		spittleRepository.save(spittle);
 		return "redirect:/spittles";
 	}
-	
+	@RequestMapping(value="/new",method=RequestMethod.GET)
+	public String newSpittle(Model model) {
+		model.addAttribute(new Spittle());
+		return "newSpittle";
+	}
 }

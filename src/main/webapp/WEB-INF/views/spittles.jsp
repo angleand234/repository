@@ -7,6 +7,7 @@
 </head>
 <body>
 	<h1>Recent Spittles</h1>
+	<a href="<c:url value="/home"></c:url>">Back</a>
 	<c:forEach items="${spittleList}" var="spittle">
 	    <li id="spittle_<c:out value="spittle.id"/>">
 	        <div class="spittleMessage">

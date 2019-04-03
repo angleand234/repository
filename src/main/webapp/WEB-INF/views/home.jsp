@@ -8,6 +8,8 @@
 <body>
 	<h1>Welcome to Spittr</h1>
 	<a href="<c:url value="/spittles"></c:url>">Spittles</a> | 
-	<a href="<c:url value="/spitter/register"></c:url>">Register</a>
+	<a href="<c:url value="/spitter/register"></c:url>">Register</a> |
+	<a href="<c:url value="/spittles/new"></c:url>">New Spittle</a> | 
+	<a href="<c:url value="/spitter/me"></c:url>">Me</a>
 </body>
 </html>

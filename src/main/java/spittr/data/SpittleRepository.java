@@ -9,5 +9,5 @@ public interface SpittleRepository {
 
 	public Spittle findOne(long spittleId);
 
-	public void save();
+	public void save(Spittle spittle);
 }

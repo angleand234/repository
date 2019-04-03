@@ -12,6 +12,7 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -63,6 +64,11 @@ public class SpitterController {
 			model.addAttribute(spitter);
 		}
 		return "profile";
-		
+	}
+	@RequestMapping(value="/me",method=RequestMethod.GET)
+	public String showMineInfo(@RequestParam(value="username",defaultValue="apollo") String username,Model model) {
+		Spitter spitter = spitterRepository.findByUsername(username);
+		model.addAttribute(spitter);
+		return "profile";
 	}
 }

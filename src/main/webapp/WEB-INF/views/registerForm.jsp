@@ -26,6 +26,7 @@
 </head>
 <body>
 	<h1>Register</h1>
+	<a href="<c:url value="/home"></c:url>">Back</a>
 	<sf:form method="POST" commandName="spitter" enctype="multipart/form-data">
 		<sf:errors path="*" element="div" cssClass="errors"></sf:errors>
 		<sf:label path="firstName" cssErrorClass="error">First Name</sf:label>:

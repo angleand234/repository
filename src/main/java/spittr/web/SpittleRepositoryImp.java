@@ -11,7 +11,9 @@ import spittr.data.SpittleRepository;
 
 @Component
 public class SpittleRepositoryImp implements SpittleRepository{
-
+	
+	private List<Spittle> spittles = new ArrayList<Spittle>();
+	
 	@Override
 	public List<Spittle> findSpittles(long max, int count) {
 		// TODO Auto-generated method stub
@@ -21,9 +23,9 @@ public class SpittleRepositoryImp implements SpittleRepository{
 	
 	private List<Spittle> createSpittlesList(int count) {
 		// TODO Auto-generated method stub
-		List<Spittle> spittles = new ArrayList<Spittle>();
+		
 		for (int i = 0; i < count; i++) {
-			spittles.add(new Spittle("Spittle "+ i,new Date()));
+			spittles.add(new Spittle("Spittle "+ Math.floor(Math.random()*1000),new Date()));
 		}
 		return spittles;
 	}
@@ -38,9 +40,14 @@ public class SpittleRepositoryImp implements SpittleRepository{
 	}
 
 	@Override
-	public void save() {
+	public void save(Spittle data) {
 		// TODO Auto-generated method stub
-		throw new DuplicateSpittleException();
+		for (Spittle spittle : spittles) {
+			if(data==null||data.getMessage().equals(spittle.getMessage())) {
+				throw new DuplicateSpittleException();
+			}
+		}
+		spittles.add(new Spittle(data.getMessage(),new Date()));
 	}
 
 }
