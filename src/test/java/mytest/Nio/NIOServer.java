@@ -30,7 +30,8 @@ public class NIOServer {
                 // 第三步：创建Reactor线程，创建多路复用器并启动线程
                 selector = Selector.open();
                 // 第四步：将ServerSocketChannel注册到Reactor线程的多路复用器Selector上，监听Accept事件
-                SelectionKey key = acceptorSvr.register(selector, SelectionKey.OP_ACCEPT);
+                //SelectionKey key = 
+                acceptorSvr.register(selector, SelectionKey.OP_ACCEPT);
             } catch (UnknownHostException e) {
                 e.printStackTrace();
             } catch (IOException e) {
